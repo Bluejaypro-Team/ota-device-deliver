@@ -1,0 +1,25 @@
+{
+  "name": "ota-device-deliver",
+  "version": "1.0.0",
+  "displayName": "OTA Device Deliver",
+  "description": "Compiles and delivers developer files to a connected Android companion device over the internet via WebSocket bridge.",
+  "author": "Bluejaypro-Team",
+  "category": "Device Integration",
+  "status": "installed",
+  "error": null,
+  "runtime": {
+    "python": ">=3.10",
+    "os": ["windows", "linux", "darwin"]
+  },
+  "address_points": {
+    "specification": "SKILL.md",
+    "cli_tool": "scripts/ota_deliver.py"
+  },
+  "cli_commands": [
+    {
+      "command": "deliver",
+      "entrypoint": "scripts/ota_deliver.py",
+      "description": "Uploads local developer assets to GCS and forwards execution commands to the Android device bridge"
+    }
+  ]
+}
