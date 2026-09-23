@@ -10,7 +10,7 @@ This skill compiles local developer files, uploads them to the Google Cloud Stor
 ## Core Methodology
 
 1. Compile the file or resource.
-2. Upload the file to the GCS bucket `project-4e0e14b0-60c5-47d8-b75.appspot.com`.
+2. Upload the file to the GCS bucket `tidal-mode-490503-i9.appspot.com`.
 3. Issue a POST request to `/command` on the Node.js bridge backend with the appropriate action and payload.
 
 ## Handling Offline Devices

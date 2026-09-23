@@ -153,25 +153,20 @@ def main(args_list=None):
     try:
         # Load from config first if present
         config = {}
-        config_path = args.config
-        if not config_path:
-            default_config_path = os.path.expanduser("~/.config/ota-deliver/config.json")
-            if os.path.exists(default_config_path):
-                config_path = default_config_path
-        if config_path:
-            config = load_config(config_path)
+        if args.config:
+            config = load_config(args.config)
 
         # Determine values based on precedence: CLI > Config > Default
         server_url = args.server
         if server_url is None:
-            server_url = config.get("server_url", "http://localhost:8765")
+            server_url = config.get("server_url", "https://ota-device-bridge-465995109772.us-central1.run.app")
         
         if not (server_url.startswith("http://") or server_url.startswith("https://")):
-            server_url = "http://" + server_url
+            server_url = "https://" + server_url
 
         bucket_name = args.bucket
         if bucket_name is None:
-            bucket_name = config.get("bucket_name", "project-4e0e14b0-60c5-47d8-b75.appspot.com")
+            bucket_name = config.get("bucket_name", "tidal-mode-490503-i9.appspot.com")
 
         device_id = args.device
         if device_id is None:
